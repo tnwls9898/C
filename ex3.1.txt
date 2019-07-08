@@ -1,0 +1,60 @@
+#include <stdio.h>
+#define AMER 2000
+#define CAFFE 2500
+#define MACCH 3000
+
+void main()
+{
+	int menu, num;
+	int a = 0;
+	int c = 0;
+	int m=0;
+	int total=0;
+
+	do
+	{
+		printf("===== 슈먼 카페 =====\n");
+		printf("1. 아메리카노 :%d원\n",AMER);
+		printf("2. 카페라떼 : %d원\n",CAFFE);
+		printf("3. 마끼아또 : %d원\n",MACCH);
+		printf("4. 주문종료\n\n");
+
+		printf("메뉴를 입력해주세요 => ");
+		scanf("%d", &menu);
+
+
+		switch (menu)
+		{
+		case 1:
+			printf("수량를 입력해주세요 => ");
+			scanf("%d", &num);
+			a = a + num; total = total + AMER * num; break;
+		case 2:
+			printf("수량를 입력해주세요 => ");
+			scanf("%d", &num);
+			c = c + num; total = total + CAFFE * num; break;
+		case 3:
+			printf("수량를 입력해주세요 => ");
+			scanf("%d", &num);
+			m = m + num; total = total + MACCH * num; break;
+		case 4:printf("주문을 종료합니다.\n"); break;
+		default: printf("잘못 입력되었습니다. 다시 입력해주세요.\n");
+		}
+
+		printf("\n");
+
+		printf("**** 총 주문내역 ****\n");
+		printf("1. 아메리카노 : %d잔\n", a);
+		printf("2. 카페라떼 : %d잔\n", c);
+		printf("3. 마끼야또 : %d잔\n", m);
+		printf("총금액 : %d원\n", total);
+
+		printf("\n");
+
+	} while (menu != 4);
+
+}
+
+
+
+
