@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+struct department {
+	char name[20];
+	int stu;
+	float avg;
+};
+
+void getInfo(struct department *p)
+{
+	printf("학과이름 입력 : ");
+	scanf("%s", p->name);
+	printf("학생 수 입력 : ");
+	scanf("%d", &p->stu);
+	printf("평균 학점 입력 : ");
+	scanf("%f", &p->avg);
+}
+
+void putInfo(struct department *p)
+{
+	printf("학과 이름 : %s\n", p->name);
+	printf("학생 수 : %d\n", p->stu);
+	printf("평균 학점 : %.2f\n", p->avg);
+}
+
+
+void main()
+{
+	struct department de[2];
+	struct department *p;
+
+	int i;
+
+	for (i = 0; i <= 1; i++)
+	{
+		printf("== 학과%d 정보를 입력하세요 ==\n", i+1);
+		
+		p = &de[i];
+		getInfo(p);
+
+		printf("\n");
+	}
+
+	printf("\n");
+
+	for (i = 0; i <= 1; i++)
+	{
+		printf("== 학과%d 정보 ==\n",i+1);
+
+		p = &de[i];
+		putInfo(p);
+
+		printf("\n");
+	}
+	
+}
+
+
+
+
+
+
+
