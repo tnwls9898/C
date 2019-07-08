@@ -1,0 +1,89 @@
+#include<stdio.h>
+#define ADULT "11000원"
+#define TEEN "9000원"
+#define CHILD "7000원"
+
+void main()
+{
+	printf("==슈먼 시네마에 오신것을 환영 합니다.==\n\n");
+
+	//변수선언
+	int age, num, cho;
+	int sum=0;
+
+
+	printf("나이를 입력하세요 : ");
+	scanf("%d", &age);
+
+	if (age >= 18)
+	{
+		sum += 11000;
+		printf("성인요금 %d",ADULT);
+	}
+	else if (age >= 12)
+	{
+		sum += 9000;
+		printf("청소년요금 %d",TEEN);
+	}
+	else
+	{ 
+		sum += 7000;
+		printf("어린이요금 %d",CHILD);
+	}
+
+	printf("이 적용됩니다.\n\n");
+
+	printf("수량을 입력하세요 : ");
+	scanf("%d", &num);
+
+	printf("\n");
+
+	sum = sum * num;
+
+	printf("===결제정보===\n");
+	if (age >= 18) 
+	{
+		printf(성인);
+		printf(" x %d매 = %d원", num, sum);
+	}
+	else if (age >= 12)
+	{
+		printf(청소년);
+		printf(" x %d매 = %d원", num, sum);
+	}
+	else
+	{
+		printf(어린이);
+		printf(" x %d매 = %d원", num, sum);
+	}
+	
+	printf("\n\n");
+
+	printf("=== 상영영화 ===\n");
+	printf("1.극한직업\n");
+	printf("2.어벤져스\n");
+	printf("3.트랜스포머\n\n");
+
+	printf("영화를 선택하세요 : ");
+	scanf("%d", &cho);
+
+
+	switch (cho)
+	{
+	case 1 :
+		printf("극한직업 -> 1관 입장\n\n");
+		break;
+	case 2 :
+		printf("어벤져스 -> 2관 입장\n\n");
+		break;
+	case 3 : 
+		printf("트랜스포머 -> 3관 입장\n\n");
+		break;
+	default :
+		printf("잘못 선택되었습니다.\n\n");
+	}
+
+
+
+}
+
