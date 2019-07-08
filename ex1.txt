@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int main()
+{
+	printf("=== 학생 성적 입력 프로그램입니다. === \n\n");
+
+	//변수선언
+	char str[7];
+	int a;
+	float b, c;
+	float average;
+	char grade;
+
+	printf("이름을 입력하세요 :");
+	scanf("%s", str);
+
+	printf("학번을 입력하세요 :");
+	scanf("%d", &a);
+
+	printf("중간고사 점수를 입력하세요 :");
+	scanf("%f", &b);
+
+	printf("기말고사 점수를 입력하세요 :");
+	scanf("%f", &c);
+
+	average = (b+c) / 2;
+	printf("학생의 평균은 %.2f입니다\n\n", average);
+
+	grade = getchar();
+	printf("등급을 입력하세요 (A,B,C,D,F 중 1개) :");
+	scanf("%c", &grade);
+
+	printf("\n");
+	
+	printf("==== 입력결과 ====\n");
+	printf("이름 : %s\n", str);
+	printf("학번 : %d\n", a);
+	printf("중간고사 : %.2f\n", b);
+	printf("기말고사 : %.2f\n", c);
+	printf("평균 : %.2f\n", average);
+	printf("등급 : %c\n\n\n", grade);
+
+}
